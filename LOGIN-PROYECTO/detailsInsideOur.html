@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas - Infinity Stream</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+        }
+
+        .sidebar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar nav ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar nav ul li a:hover {
+            color: #f4f4f4;
+        }
+
+        .main-content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        .category h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .content-grid {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* Espacio entre imagen y detalles */
+        }
+
+        .content-grid img {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            width: 50%;
+            height: auto;
+        }
+
+        .detail-box {
+            flex-grow: 1;
+        }
+
+        .meta-list {
+            display: flex;
+            flex-direction: column; /* Cambiar a columna */
+            gap: 10px; /* Espacio entre elementos en la columna */
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            font-size: 16px;
+        }
+
+        .card-badge {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block; /* Asegura que la caja ajuste al contenido */
+            max-width: 100px; /* Ancho máximo para limitar el tamaño */
+            text-align: center; /* Centra el texto */
+            overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+            white-space: nowrap; /* Evita el salto de línea */
+            text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+        }
+
+        .genre {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .overview {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .list-item {
+            margin-bottom: 10px;
+        }
+
+        .list-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tittle-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .title-large {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .slider-list {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .video-card {
+            width: 400px; /* Ancho aumentado */
+            height: 225px; /* Alto aumentado */
+            background-color: #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .watch-now-button {
+            background-color: #e74c3c; /* Rojo */
+            color: #fff;
+            padding: 15px 30px; /* Aumentado el tamaño del botón */
+            border: none;
+            border-radius: 5px;
+            font-size: 20px; /* Aumentado el tamaño de la fuente */
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none; /* Eliminar subrayado */
+        }
+
+        .watch-now-button:hover {
+            background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">InfinityStream</div>
+        <nav>
+            <ul>
+                <li><a href="bienvenida.php#inicio">Inicio</a></li>
+                <li><a href="bienvenida.php#peliculas">Películas</a></li>
+                <li><a href="bienvenida.php#documentales">Documentales</a></li>
+                <li><a href="bienvenida.php#series">Series</a></li>
+                <li><a href="php/cerrar_sesion.php">Salir</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <section class="category">
+            <h2>Películas</h2>
+            <div class="content-grid">
+                <img src="img/inside_out_two-poster.jpg" alt="Película 1">
+                <div>
+                    <div class="detail-box">
+                        <h1>INSIDE OUT 2</h1>
+                        <div class="meta-list">
+                            <div class="meta-item">Release Date: 2024</div>
+                            <div class="meta-item card-badge">Rating: 7+</div>
+                        </div>
+                    </div>
+                    <p class="genre">Genre: Animation, Adventure, Comedy</p>
+                    <p class="overview">La película de Disney y Pixar INTENSA-MENTE 2 regresa a la mente de la recién adolescente Riley justo cuando el cuartel general está sufriendo una repentina demolición para hacer sitio a algo totalmente inesperado: ¡nuevas emociones! Alegría, Tristeza, Furia, Temor y Desagrado, que llevan mucho tiempo realizando una operación exitosa, no están seguros de cómo sentirse cuando aparece Ansiedad. Y parece que no está sola.</p>
+                    <ul class="detail-list">
+                        <li class="list-item">
+                            <p class="list-name">Starring</p>
+                            <p>Amy Poehler, Maya Hawke, Kensington Tallman, Liza Lapira, Tony Hale, Lewis Black</p>
+                        </li>
+                        <li class="list-item">
+                            <p class="list-name">Director:</p>
+                            <p>Kelsey Mann</p>
+                        </li>
+                    </ul>
+
+                    <div class="tittle-wrapper">
+                        <h3 class="title-large">Trailers</h3>
+                    </div>
+
+                    <div class="slider-list"> 
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/LEjhY15eCx0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-card">
+                            <iframe src="https://www.youtube.com/embed/bNIRb4TbrGk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <a href="ver_ahora.php" class="watch-now-button">Ver ahora</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
